@@ -1,10 +1,3 @@
----
-layout: post
-title: Thinking about Gender and Sex on HTML Forms
-date: 2016-09-29 -0500
-categories: forms programming
----
-
 ### tldr;
 
 It's much more than M/F, man/woman, etc. Check out Facebook's gender selector for a good example.
