@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     var posts = [{
-        filename: '/posts/gender-in-web-forms.md',
+        filename: 'gender-in-web-forms.md',
         url: 'thinking-about-gender-in-web-forms',
         titlePrefix: 'thinking about ',
         title: 'Gender in Web Forms',
