@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     var posts = [{
-        filename: 'gender-in-web-forms.md',
+        filename: 'posts/gender-in-web-forms.md',
         url: 'thinking-about-gender-in-web-forms',
         titlePrefix: 'thinking about ',
         title: 'Gender in Web Forms',
@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       }];
     var metadata = posts.findBy('url', params.url);
     return $.get(metadata.filename).then((post)=> {
-      var data = post.split('---');
+      var data = post.split('!--');
       return {
         titlePrefix: metadata.titlePrefix,
         title: metadata.title,
