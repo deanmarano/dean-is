@@ -1,15 +1,9 @@
 import Ember from 'ember';
+import Posts from 'dean-is/models/post';
 
 export default Ember.Route.extend({
   model(params) {
-    var posts = [{
-        filename: 'posts/gender-in-web-forms.md',
-        url: 'thinking-about-gender-in-web-forms',
-        titlePrefix: 'thinking about ',
-        title: 'Gender in Web Forms',
-        date: ' 2016-09-29'
-      }];
-    var metadata = posts.findBy('url', params.url);
+    var metadata = Posts.findBy('url', params.url);
     return $.get(metadata.filename).then((post)=> {
       var data = post.split('!--');
       return {
