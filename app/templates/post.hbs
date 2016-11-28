@@ -1,7 +1,9 @@
 <div class="post">
   <h2 class="center">{{link-to 'dean is' 'home'}} {{model.titlePrefix}}</h2>
   <h1 class="center">{{model.title}}</h1>
-  Written {{model.date}}
+  {{#if model.date}}
+    Written {{model.date}}
+  {{/if}}
   {{markdown-to-html model.content}}
   <div class="center">
     {{partial 'footer'}}
