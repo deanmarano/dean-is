@@ -4,9 +4,9 @@
     "canny.min": "https://raw.githubusercontent.com/yuta1984/CannyJS/master/canny.min.js",
     "ember": "~2.8.0",
     "ember-cli-shims": "0.1.1",
-    "webgazer": "https://webgazer.cs.brown.edu/webgazer.js",
-    "tether": "^1.3.7",
+    "marked": "^0.3.6",
     "moment": "^2.15.2",
-    "showdown": "^1.4.3"
+    "tether": "^1.3.7",
+    "webgazer": "https://webgazer.cs.brown.edu/webgazer.js"
   }
 }

@@ -22,6 +22,7 @@ module.exports = function(defaults) {
   [
     'moment/moment.js',
     'canny.min/index.js',
+    'marked/lib/marked.js',
     'webgazer/index.js'
   ].forEach((dependency) => {
     app.import(`bower_components/${dependency}`);
