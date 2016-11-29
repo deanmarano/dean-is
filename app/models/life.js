@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import Month from './month';
+/* global moment */
 
 export default Ember.Object.extend({
   maxYears: 90,
@@ -45,7 +46,7 @@ export default Ember.Object.extend({
     for(let i = 0; i < this.get('maxYears'); i++) {
       let year = firstYear + i;
       let label;
-      if(year == firstYear || year % 10 == 0 || year == moment().year()) {
+      if(year === firstYear || year % 10 === 0 || year === moment().year()) {
         label = year;
       }
       years[i] = {year: firstYear + i, months: [], label: label};
@@ -57,11 +58,11 @@ export default Ember.Object.extend({
   }),
 
   createMonth(month, year, firstYear, life) {
-    let events = life.events.filter(e => e.date.month() == month && e.date.year() == year);
+    let events = life.events.filter(e => e.date.month() === month && e.date.year() === year);
     let monthObj = Month.create({month: month, year: year, life: life, events: events});
     let birthdate = this.get('birthdate');
     let importantBirthdays = [5, 10, 16, 18, 21, 25, 30, 40, 50, 60, 70, 76];
-    if(monthObj.get('month') == birthdate.month() && importantBirthdays.indexOf(year - firstYear) != -1) {
+    if(monthObj.get('month') === birthdate.month() && importantBirthdays.indexOf(year - firstYear) != -1) {
       monthObj.events.push({
         date: moment(`${year}-${month + 1}-${birthdate.date()}`),
         type: 'life',

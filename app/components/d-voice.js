@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
+// adapted from https://github.com/mdn/voice-change-o-matic-float-data
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 export default Ember.Component.extend({
   audioContext: Ember.computed(function() {
-    return new (window.AudioContext || window.webkitAudioContext)();
+    var AudioContext = window.AudioContext || window.webkitAudioContext;
+    return new AudioContext();
   }),
   didInsertElement() {
     // fork getUserMedia for multiple browser versions, for those
@@ -32,10 +35,12 @@ export default Ember.Component.extend({
         concertHallBuffer = buffer;
         soundSource = audioCtx.createBufferSource();
         soundSource.buffer = concertHallBuffer;
-        this.set('source', soundSource);
+        //this.set('source', soundSource);
         soundSource.start();
-      }, function(e){"Error with decoding audio data" + e.err});
-    }
+      }, function(e){
+        console.log("Error with decoding audio data" + e.err);
+      });
+    };
 
     ajaxRequest.send();
 
@@ -46,7 +51,7 @@ export default Ember.Component.extend({
       navigator.getUserMedia (
         { audio: true },
         (stream)=> {
-          //this.set('source', audioCtx.createMediaStreamSource(stream));
+          this.set('source', audioCtx.createMediaStreamSource(stream));
         },
         function(err) {
           console.log('The following gUM error occured: ' + err);

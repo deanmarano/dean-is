@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 import Ember from 'ember';
+/* global moment */
 
 const { attr, belongsTo } = DS;
 

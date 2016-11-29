@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import Life from 'dean-is/models/life';
+/* global moment */
 
 export default Ember.Route.extend({
   model() {

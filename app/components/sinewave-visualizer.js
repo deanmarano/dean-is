@@ -57,14 +57,14 @@ export default Ember.Component.extend({
 
       var sliceWidth = width / bufferLength;
 
+      var y = HEIGHT/2 + v;
       sinewaveCanvasCtx.moveTo(0, y);
       for(var i = 0; i < bufferLength; i++) {
         var v = dataArray[i] * 200.0;
-        var y = HEIGHT/2 + v;
         sinewaveCanvasCtx.lineTo(i * sliceWidth, y);
       }
       sinewaveCanvasCtx.stroke();
-    };
+    }
 
     drawSinewave();
   }

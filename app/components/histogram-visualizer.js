@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     analyser.minDecibels = -90;
     analyser.maxDecibels = -10;
     analyser.smoothingTimeConstant = 0.85;
-    analyser.fftSize = 256;
+    analyser.fftSize = 128;
     return analyser;
   }),
 
