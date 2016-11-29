@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <header>
+    <h1>Audio Analyzer</h1>
+  </header>
+
+  {{#if source}}
+    {{sinewave-visualizer source=source audioContext=audioContext}}
+    {{histogram-visualizer source=source audioContext=audioContext}}
+  {{/if}}
+</div>
