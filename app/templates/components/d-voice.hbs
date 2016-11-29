@@ -6,5 +6,13 @@
   {{#if source}}
     {{sinewave-visualizer source=source audioContext=audioContext}}
     {{histogram-visualizer source=source audioContext=audioContext}}
+    {{timeline-visualizer source=source audioContext=audioContext}}
   {{/if}}
+  <button {{action 'togglePlayback'}}>
+    {{#if source.playing}}
+      Pause
+    {{else}}
+      Play
+    {{/if}}
+  </button>
 </div>

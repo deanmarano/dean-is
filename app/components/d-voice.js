@@ -24,7 +24,7 @@ export default Ember.Component.extend({
 
     var ajaxRequest = new XMLHttpRequest();
 
-    ajaxRequest.open('GET', 'https://mdn.github.io/voice-change-o-matic/audio/concert-crowd.ogg', true);
+    ajaxRequest.open('GET', '/anna-karenina-002.mp3', true);
 
     ajaxRequest.responseType = 'arraybuffer';
 
@@ -35,7 +35,11 @@ export default Ember.Component.extend({
         concertHallBuffer = buffer;
         soundSource = audioCtx.createBufferSource();
         soundSource.buffer = concertHallBuffer;
-        //this.set('source', soundSource);
+        this.setProperties({
+          source: soundSource,
+          playing: true
+        });
+        //soundSource.connect(audioCtx.destination);
         soundSource.start();
       }, function(e){
         console.log("Error with decoding audio data" + e.err);
@@ -51,7 +55,7 @@ export default Ember.Component.extend({
       navigator.getUserMedia (
         { audio: true },
         (stream)=> {
-          this.set('source', audioCtx.createMediaStreamSource(stream));
+          //this.set('source', audioCtx.createMediaStreamSource(stream));
         },
         function(err) {
           console.log('The following gUM error occured: ' + err);
@@ -59,6 +63,16 @@ export default Ember.Component.extend({
       );
     } else {
       console.log('getUserMedia not supported on your browser!');
+    }
+  },
+  actions: {
+    togglePlayback() {
+      var context = this.get('audioContext');
+      if(context.state === 'running') {
+        context.suspend();
+      } else {
+        context.resume();
+      }
     }
   }
 });

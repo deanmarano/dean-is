@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
 export default Ember.Component.extend({
   analyser: Ember.computed('audioContext', 'source', function() {
@@ -30,42 +31,40 @@ export default Ember.Component.extend({
   },
 
   setupCanvas() {
-    var sinewaveCanvasCtx = this.get("canvasContext");
+    var canvasCtx = this.get("canvasContext");
 
     var analyser = this.get('analyser');
 
     var width = this.get('width');
     var HEIGHT = this.get("height");
 
-    var bufferLength = analyser.fftSize;
-    var dataArray = new Float32Array(bufferLength);
+    canvasCtx.clearRect(0, 0, width, HEIGHT);
+    // width to go by
 
-    sinewaveCanvasCtx.clearRect(0, 0, width, HEIGHT);
+    var data = this.get('source').buffer.getChannelData(0);
+    var sampleRate = this.get('source').buffer.sampleRate;
 
-    function drawSinewave() {
-      requestAnimationFrame(drawSinewave);
+    //canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+    //canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
-      analyser.getFloatTimeDomainData(dataArray);
+    // 634 by 100
+    //var barWidth = (WIDTH / bufferLength) * 2.5;
+    //var barHeight;
 
-      sinewaveCanvasCtx.fillStyle = 'rgb(200, 200, 200)';
-      sinewaveCanvasCtx.fillRect(0, 0, width, HEIGHT);
-
-      sinewaveCanvasCtx.lineWidth = 2;
-      sinewaveCanvasCtx.strokeStyle = 'rgb(0, 0, 0)';
-
-      sinewaveCanvasCtx.beginPath();
-
-      var sliceWidth = width / bufferLength;
-
-      sinewaveCanvasCtx.moveTo(0, y);
-      for(var i = 0; i < bufferLength; i++) {
-        var v = dataArray[i] * 200.0;
-        var y = HEIGHT/2 + v;
-        sinewaveCanvasCtx.lineTo(i * sliceWidth, y);
+    for(var i = 0; i < (data.length / sampleRate); i++) {
+      var sample = data.slice(i * sampleRate, i * sampleRate + sampleRate);
+      var sampleBlockSize = sampleRate / 100;
+      for(var j = 0; j < 100; j++) {
+        var sum = sample.slice(sampleBlockSize * j, sampleBlockSize * j + sampleBlockSize).reduce(function(a, b) {
+          return a + b;
+        }, 0);
+        var scaledSum = (1 / sum) * 100;
+        var value = Math.floor(Math.log10(sum));
+        _.(sample).max();
+        console.log(value);
+        canvasCtx.fillStyle = 'rgb(0,0,' + value + ')';
+        canvasCtx.fillRect(i, j, 1, 1);
       }
-      sinewaveCanvasCtx.stroke();
     }
-
-    drawSinewave();
   }
 });
