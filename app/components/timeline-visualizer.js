@@ -59,10 +59,8 @@ export default Ember.Component.extend({
           return a + b;
         }, 0);
         var scaledSum = (1 / sum) * 100;
-        var value = Math.floor(Math.log10(sum));
-        _.(sample).max();
-        console.log(value);
-        canvasCtx.fillStyle = 'rgb(0,0,' + value + ')';
+        var value = scaledSum;
+        canvasCtx.fillStyle = 'rgb(0,0,' + sum + ')';
         canvasCtx.fillRect(i, j, 1, 1);
       }
     }
