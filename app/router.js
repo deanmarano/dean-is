@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('life-calendar', {path: 'living-life'});
   this.route('eye-color', {path: 'looking-at-eyes'});
   this.route('voice', {path: 'hearing-voices'});
+  this.route('listening', {path: 'listen'});
 
   // Posts
   this.route('post', {path: ':url'});
