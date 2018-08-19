@@ -19,6 +19,7 @@ Router.map(function() {
 
   // Posts
   this.route('post', {path: ':url'});
+  this.route('bookmarks', function() {});
 });
 
 export default Router;

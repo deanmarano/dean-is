@@ -1,0 +1,11 @@
+  {{#each model as |entity|}}
+  <div class="entity" data-id={{entity.id}}>
+    <h3>
+      {{entity.subject}}
+    </h3>
+    <h5>{{entity.source}}</h5>
+    <p>{{entity.message}}</p>
+  </div>
+  {{else}}
+      No entities
+  {{/each}}

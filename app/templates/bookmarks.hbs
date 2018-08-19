@@ -1,0 +1,8 @@
+<form {{action "createEntry" on="submit"}}>
+  Source:  {{input value=entity.source required=true}}<br>
+  Subject: {{input value=entity.subject required=true}}<br>
+  Message: {{textarea value=entity.message required=true}}
+  <button>Create Entry</button>
+</form>
+
+{{outlet}}
