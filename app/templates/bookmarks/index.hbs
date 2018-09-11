@@ -2,9 +2,15 @@
   <div class="entity" data-id={{entity.id}}>
     <h3>
       {{entity.subject}}
+      <a {{action 'destroy' entity on="click"}}>X</a>
     </h3>
     <h5>{{entity.source}}</h5>
     <p>{{entity.message}}</p>
+    <ul>
+      {{#each entity.tags as |tag|}}
+        <li>{{link-to tag.name 'bookmarks.tags' tag.name}}</li>
+      {{/each}}
+    </ul>
   </div>
   {{else}}
       No entities

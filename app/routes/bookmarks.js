@@ -8,9 +8,14 @@ export default Ember.Route.extend({
     return this.store.findAll('entity');
   },
   actions: {
+    destroy(entity) {
+      entity.destroyRecord();
+    },
     createEntry() {
       let entity = this.controller.get('entity');
-      return entity.save();
+      entity.save().then(() => {
+        this.controller.set('entity', this.store.createRecord('entity'));
+      });
     }
   }
 });

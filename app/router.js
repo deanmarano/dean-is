@@ -16,10 +16,12 @@ Router.map(function() {
   this.route('eye-color', {path: 'looking-at-eyes'});
   this.route('voice', {path: 'hearing-voices'});
   this.route('listening', {path: 'listen'});
+  this.route('bookmarks', {path: 'bookmarking'}, function() {
+    this.route('tags', {path: 'tags/:name'});
+  });
 
   // Posts
   this.route('post', {path: ':url'});
-  this.route('bookmarks', function() {});
 });
 
 export default Router;
