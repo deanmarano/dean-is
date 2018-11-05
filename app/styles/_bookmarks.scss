@@ -1,3 +1,51 @@
-.entity {
-  border: 2px solid black;
+.bookmarks {
+  background-color: darkgrey;
+  padding: 10px;
+
+  .new-entity {
+    display: flex;
+    flex-direction: column;
+    button {
+      width: 100%;
+      background-color: blue;
+      color: white;
+      border-radius: 10px;
+      padding: 5px;
+      border: 0px;
+      margin: 10px 0px;
+    }
+    .form-control {
+      width: 100%;
+    }
+  }
+  .outlet {
+    .entity {
+      background-color: white;
+      border: 5px solid darkgrey;
+      padding: 5px;
+
+      h3 {
+        word-break: break-all;
+      }
+
+      p {
+        text-overflow: wrap;
+        word-break: break-all;
+      }
+
+      .tags {
+        padding-left: 0;
+        list-style-type: none;
+
+        li {
+          font-size: .8em;
+          display: inline;
+          content: "#";
+          background-color: lightblue;
+          padding: 3px 10px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
 }

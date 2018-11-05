@@ -1,8 +1,23 @@
-<form {{action "createEntry" on="submit"}}>
-  Source:  {{input value=entity.source required=true}}<br>
-  Subject: {{input value=entity.subject required=true}}<br>
-  Message: {{textarea value=entity.message required=true}}
-  <button>Create Entry</button>
-</form>
+<div class="bookmarks">
+  <form class="new-entity" {{action "createEntry" on="submit"}}>
+    <div class="form-control">
+      <label for="subject">Subject:</label>
+      {{input value=entity.subject required=true on=(action "sourceChanged")}}
+    </div>
+    <div class="form-control">
+      <label for="subject">Source:</label>
+      {{input value=entity.source required=true}}
+    </div>
+    <div class="form-control">
+      <label for="subject">Message:</label>
+      {{textarea value=entity.message required=true}}
+    </div>
+    <div class="form-control">
+      <button>Create Entry</button>
+    </div>
+  </form>
 
-{{outlet}}
+  <div class="outlet">
+    {{outlet}}
+  </div>
+</div>
