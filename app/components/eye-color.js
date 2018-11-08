@@ -1,7 +1,7 @@
-import Ember from 'ember';
-/* global Canny */
+import Component from '@ember/component';
+/* global CannyJS, webgazer, clearphoto */
 
-export default Ember.Component.extend({
+export default Component.extend({
   actions: {
     start() {
       navigator.getUserMedia({video: true}, (stream)=> {
@@ -9,7 +9,6 @@ export default Ember.Component.extend({
         var video = this.$('video')[0];
         video.src = URL.createObjectURL(stream);
         video.play();
-        console.log('setting video src');
         webgazer.start();
 
       }, (err)=> {

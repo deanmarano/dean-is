@@ -1,46 +1,46 @@
-import Ember from 'ember';
+import EmberObject, { computed } from '@ember/object';
 import Month from './month';
 /* global moment */
 
-export default Ember.Object.extend({
+export default EmberObject.extend({
   maxYears: 90,
   lifeExpectancy: 76,
-  percentComplete: Ember.computed('lifeExpectancy', 'age', function() {
+  percentComplete: computed('lifeExpectancy', 'age', function() {
     return this.get('age') / this.get('lifeExpectancy') * 100;
   }),
-  percentRemaining: Ember.computed('percentComplete', function() {
+  percentRemaining: computed('percentComplete', function() {
     return 100 - this.get('percentComplete');
   }),
-  yearsComplete: Ember.computed('birthdate', function() {
+  yearsComplete: computed('birthdate', function() {
     return moment().diff(this.get('birthdate'), 'years');
   }),
-  yearsRemaining: Ember.computed('deathdate', function() {
+  yearsRemaining: computed('deathdate', function() {
     return this.get('deathdate').diff(moment(), 'years');
   }),
-  monthsComplete: Ember.computed('birthdate', function() {
+  monthsComplete: computed('birthdate', function() {
     return moment().diff(this.get('birthdate'), 'months');
   }),
-  monthsRemaining: Ember.computed('birthdate', function() {
+  monthsRemaining: computed('birthdate', function() {
     return this.get('deathdate').diff(moment(), 'months');
   }),
-  daysComplete: Ember.computed('birthdate', function() {
+  daysComplete: computed('birthdate', function() {
     return moment().diff(this.get('birthdate'), 'days');
   }),
-  daysRemaining: Ember.computed('birthdate', function() {
+  daysRemaining: computed('birthdate', function() {
     return this.get('deathdate').diff(moment(), 'days');
   }),
-  age: Ember.computed('birthdate', function() {
+  age: computed('birthdate', function() {
     return moment().diff(this.get('birthdate'), 'years');
   }),
-  firstYear: Ember.computed('birthdate', function() {
+  firstYear: computed('birthdate', function() {
     return this.get('birthdate').clone().year();
   }),
 
-  deathdate: Ember.computed('birthdate', 'lifeExpectancy', function() {
+  deathdate: computed('birthdate', 'lifeExpectancy', function() {
     return moment(this.get('birthdate')).add(this.get('lifeExpectancy'), 'years');
   }),
 
-  years: Ember.computed('events', function() {
+  years: computed('events', function() {
     var firstYear = this.get('firstYear');
     var years = [];
     for(let i = 0; i < this.get('maxYears'); i++) {

@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import Posts from 'dean-is/models/post';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return { posts: Posts };
   }

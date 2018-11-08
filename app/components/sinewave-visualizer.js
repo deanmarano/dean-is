@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
-  analyser: Ember.computed('audioContext', 'source', function() {
+export default Component.extend({
+  analyser: computed('audioContext', 'source', function() {
     var analyser = this.get('audioContext').createAnalyser();
     this.get('source').connect(analyser);
     analyser.minDecibels = -90;
@@ -11,13 +12,13 @@ export default Ember.Component.extend({
     return analyser;
   }),
 
-  width: Ember.computed('canvas', function() {
+  width: computed('canvas', function() {
     return this.get("canvas").width;
   }),
-  height: Ember.computed('canvas', function() {
+  height: computed('canvas', function() {
     return this.get("canvas").height;
   }),
-  canvasContext: Ember.computed('canvas', function() {
+  canvasContext: computed('canvas', function() {
     return this.get('canvas').getContext('2d');
   }),
 

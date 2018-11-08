@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 /* global marked */
 
 export function markdownToHtml(params/*, hash*/) {
-  return Ember.String.htmlSafe(marked(params[0]));
+  return htmlSafe(marked(params[0]));
 }
 
-export default Ember.Helper.helper(markdownToHtml);
+export default buildHelper(markdownToHtml);

@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 // adapted from https://github.com/mdn/voice-change-o-matic-float-data
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
-export default Ember.Component.extend({
-  audioContext: Ember.computed(function() {
+export default Component.extend({
+  audioContext: computed(function() {
     var AudioContext = window.AudioContext || window.webkitAudioContext;
     return new AudioContext();
   }),
@@ -38,7 +39,7 @@ export default Ember.Component.extend({
         //this.set('source', soundSource);
         soundSource.start();
       }, function(e){
-        console.log("Error with decoding audio data" + e.err);
+        window.alert("Error with decoding audio data" + e.err);
       });
     };
 
@@ -47,18 +48,17 @@ export default Ember.Component.extend({
     //main block for doing the audio recording
 
     if (navigator.getUserMedia) {
-      console.log('getUserMedia supported.');
       navigator.getUserMedia (
         { audio: true },
         (stream)=> {
           this.set('source', audioCtx.createMediaStreamSource(stream));
         },
         function(err) {
-          console.log('The following gUM error occured: ' + err);
+          window.alert('The following gUM error occured: ' + err);
         }
       );
     } else {
-      console.log('getUserMedia not supported on your browser!');
+      window.alert('getUserMedia not supported on your browser!');
     }
   }
 });

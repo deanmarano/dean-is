@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import Posts from 'dean-is/models/post';
+/* global $ */
 
-export default Ember.Route.extend({
+export default Route.extend({
   model(params) {
     var metadata = Posts.findBy('url', params.url);
     return $.get(metadata.filename).then((post)=> {
