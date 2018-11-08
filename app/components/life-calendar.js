@@ -1,12 +1,11 @@
-import Ember from 'ember';
-import Month from '../models/month';
-/* global moment */
+import { set } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   actions: {
     expandMonth(year, month) {
-      this.get('life.years').forEach(year => Ember.set(year, 'currentMonth', null));
-      Ember.set(year, 'currentMonth', month);
+      this.get('life.years').forEach(year => set(year, 'currentMonth', null));
+      set(year, 'currentMonth', month);
     }
   }
 });

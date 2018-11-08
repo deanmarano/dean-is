@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import Life from 'dean-is/models/life';
 /* global moment */
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return new Life({
       name: 'Dean',

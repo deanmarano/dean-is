@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
 
 export function format(params, hash) {
   if(!params[0]) { return; }
@@ -11,4 +11,4 @@ export function format(params, hash) {
   }
 }
 
-export default Ember.Helper.helper(format);
+export default buildHelper(format);

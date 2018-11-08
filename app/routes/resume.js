@@ -1,7 +1,8 @@
 import Route from '@ember/routing/route';
+/* global $ */
 
 export default Route.extend({
-  model(params) {
+  model() {
     return $.get('resume.md');
   }
 });
