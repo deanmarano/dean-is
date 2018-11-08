@@ -5,6 +5,9 @@
   .new-entity {
     display: flex;
     flex-direction: column;
+    max-width: 256px;
+    margin-left: auto;
+    margin-right: auto;
     button {
       width: 100%;
       background-color: blue;
@@ -15,6 +18,8 @@
       margin: 10px 0px;
     }
     .form-control {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
     }
   }
@@ -22,15 +27,20 @@
     .entity {
       background-color: white;
       border: 5px solid darkgrey;
+      border-radius: 10px;
       padding: 5px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
 
       h3 {
-        word-break: break-all;
+        word-break: break-word;
       }
 
       p {
         text-overflow: wrap;
-        word-break: break-all;
+        word-break: break-word;
+        text-align: justify;
       }
 
       .tags {

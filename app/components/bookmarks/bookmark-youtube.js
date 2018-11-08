@@ -1,5 +1,8 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: ['entity']
+  onInserted() {
+    debugger;
+  },
+  classNames: ['entity', 'youtube']
 });

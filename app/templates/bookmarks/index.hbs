@@ -1,6 +1,6 @@
   {{#each model as |entity|}}
     {{#if (is-component (concat "bookmark-" entity.source))}}
-      {{component (concat "bookmarks/bookmark-" entity.source entity=entity)}}
+      {{component (concat "bookmark-" entity.source entity=entity)}}
     {{else}}
       <div class="entity" data-id={{entity.id}}>
         <h3>

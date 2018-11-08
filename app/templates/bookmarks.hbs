@@ -1,16 +1,16 @@
 <div class="bookmarks">
   <form class="new-entity" {{action "createEntry" on="submit"}}>
     <div class="form-control">
-      <label for="subject">Subject:</label>
-      {{input value=entity.subject required=true on=(action "sourceChanged")}}
+      <label for="subject">Sender:</label>
+      {{input value=entity.subject required=true on=(action "sourceChanged") size="19"}}
     </div>
     <div class="form-control">
       <label for="subject">Source:</label>
-      {{input value=entity.source required=true}}
+      {{input value=entity.source required=true size="19"}}
     </div>
     <div class="form-control">
       <label for="subject">Message:</label>
-      {{textarea value=entity.message required=true}}
+      {{textarea value=entity.message required=true cols="23"}}
     </div>
     <div class="form-control">
       <button>Create Entry</button>

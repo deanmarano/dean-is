@@ -1,0 +1,12 @@
+<h3>
+  <a href=(entity.subject)>{{entity.subject}}</a>
+  <a {{action 'destroy' entity on="click"}}>X</a>
+</h3>
+YOUTUUUUUBE
+<h5><a href={{ entity.subject }}>{{entity.subject}}</a></h5>
+<p>{{entity.messageWithoutTags}}</p>
+<ul class="tags">
+  {{#each entity.tags as |tag|}}
+  <li>{{link-to tag.name 'bookmarks.tags' tag.name}}</li>
+  {{/each}}
+</ul>
