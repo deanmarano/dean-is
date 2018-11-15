@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import Posts from 'dean-is/models/post';
-/* global $ */
+import $ from 'jquery';
 
 export default Route.extend({
   model(params) {
