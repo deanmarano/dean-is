@@ -112,8 +112,12 @@ export default Route.extend({
         {value: 9, given: true},
         {value: 2},
       ],
-    ].map((row) => {
-      return row.map(cell => SudokuCell.create(cell));
+    ].map((row, rowIndex) => {
+      return row.map((cell, columnIndex) => {
+        cell.row = rowIndex;
+        cell.column = columnIndex;
+        return SudokuCell.create(cell);
+      });
     });
   }
 });

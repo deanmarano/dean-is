@@ -1,9 +1,30 @@
 import Controller from '@ember/controller';
-import { computed } from '@ember/object';
+import { computed, set } from '@ember/object';
 
 export default Controller.extend({
   currentlySelectedCell: null,
   actions: {
+    moveSelection(direction) {
+      let nextCell;
+      switch(direction) {
+        case "down":
+          nextCell = this.model[this.currentlySelectedCell.row + 1].findBy('column', this.currentlySelectedCell.column);
+          break;
+        case "up":
+          nextCell = this.model[this.currentlySelectedCell.row - 1].findBy('column', this.currentlySelectedCell.column);
+          break;
+        case "left":
+          nextCell = this.model[this.currentlySelectedCell.row].findBy('column', this.currentlySelectedCell.column - 1);
+          break;
+        case "right":
+          nextCell = this.model[this.currentlySelectedCell.row].findBy('column', this.currentlySelectedCell.column + 1);
+          break;
+
+      }
+      if(nextCell) {
+        this.actions.select.call(this, nextCell);
+      }
+    },
     select(cell) {
       if(this.currentlySelectedCell) {
         this.set('currentlySelectedCell.selected', false);
@@ -37,7 +58,35 @@ export default Controller.extend({
       } else {
         this.set('currentlySelectedCell.guess', null);
       }
-      console.log(`guess: ${this.currentlySelectedCell.guess} hints: ${JSON.stringify(this.currentlySelectedCell.hints)}`);
+    },
+
+    clearCell() {
+      this.set('currentlySelectedCell.hints', []);
+    },
+
+    inverseSelection() {
+      if(!this.currentlySelectedCell) {
+        return;
+      }
+      let invertedHints = [];
+      let hints = this.currentlySelectedCell.hints;
+      for(let i = 1; i <= 9; i++) {
+        if(!hints.includes(i)) {
+          invertedHints.push(i);
+        }
+      }
+      this.set('currentlySelectedCell.hints', invertedHints);
+    },
+
+    checkPuzzle() {
+      for(let row in this.model) {
+        for(let cell in row) {
+          if(cell.value != cell.displayValue) {
+            set('cell', 'error', true);
+          }
+        }
+      }
+
     }
   }
 });
