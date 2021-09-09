@@ -64,7 +64,7 @@ export default EmberObject.extend({
     let importantBirthdays = [5, 10, 16, 18, 21, 25, 30, 40, 50, 60, 70, 76];
     if(monthObj.get('month') === birthdate.month() && importantBirthdays.indexOf(year - firstYear) != -1) {
       monthObj.events.push({
-        date: moment(`${year}-${month + 1}-${birthdate.date()}`),
+        date: birthdate.clone().add(year - birthdate.year(), 'years'),
         type: 'life',
         text: `${this.get('name')}'s ${year - firstYear} birthday`
       });
