@@ -23,6 +23,11 @@ export default Route.extend({
         { date: moment('2005-10-18'), type: 'family', text: 'Chewy was born.'},
         { date: moment('2005-12-02'), type: 'family', text: 'Mom and Dad separate.'},
         { date: moment('2014-11-17'), type: 'family', text: 'Dad and Debi get married.'},
+        { date: moment('2017-01-16'), type: 'family', text: 'Grandma died'},
+        { date: moment('2019-12-31'), type: 'family', text: 'Asked Kelsey to marry me.'},
+        { date: moment('2019-08-10'), type: 'family', text: 'Chewy died.'},
+        { date: moment('2021-09-04'), type: 'family', text: 'Kelsey and I get married.'},
+        { date: moment('2020-07-25'), type: 'family', text: 'Odie was born.'},
 
         { date: moment('2001-06-03'), type: 'education', text: 'Graudated from Benjamin Middle School' },
         { date: moment('2001-08-20'), type: 'education', text: 'Started St. Francis High School.' },
@@ -30,6 +35,7 @@ export default Route.extend({
         { date: moment('2005-08-18'), type: 'education', text: 'Started Hope College bachelors degree in biology and chemistry.' },
         { date: moment('2009-05-24'), type: 'education', text: 'Graduated Hope College bachelors degree in computer science.' },
         { date: moment('2011-09-05'), type: 'education', text: 'Started DePaul University masters degree in computer science with AI emphasis.' },
+        { date: moment('2019-06-15'), type: 'education', text: 'Graduated DePaul University masters degree in computer science with AI emphasis.' },
 
         // https://www.google.com/maps/@41.9168864,-88.1297122,3a,75y,268h,90t/data=!3m7!1e1!3m5!1smD0vfkAGV7754h0baO9kJQ!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DmD0vfkAGV7754h0baO9kJQ%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D268.1987%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656!6m1!1e1
         { date: moment('1987-08-13'), type: 'life', text: 'Dean was born into 552 Haiawatha Dr., Carol Stream, IL.' },
@@ -49,6 +55,10 @@ export default Route.extend({
         { date: moment('2013-08-01'), type: 'life', text: 'Moved to 1008 W. Armitage Ave., Chicago, IL.' },
         { date: moment('2013-10-13'), type: 'life', text: 'Completed 2013 Chicago Marathon.' },
         { date: moment('2015-08-01'), type: 'life', text: 'Moved to 1730 N. Western Ave, Chicago, IL.' },
+        { date: moment('2017-08-25'), type: 'life', text: 'Moved to 2140 N. Concord Pl, Chicago, IL.' },
+        { date: moment('2017-09-14'), type: 'life', text: 'First date with Kelsey.' },
+        { date: moment('2018-06-01'), type: 'life', text: 'Moved to 1730 W Thomas St, Chicago, IL.' },
+        { date: moment('2020-04-10'), type: 'life', text: 'Bought home at 1211 Sigsbee St SE with Kelsey, Grand Rapids, MI.' },
 
         { date: moment('2008-05-05'), type: 'work', text: 'Started job at Hope Computer Information and Technology department.' },
         { date: moment('2008-05-15'), type: 'work', text: 'Started internship at Allstate as Systems Analyst.' },
@@ -60,6 +70,11 @@ export default Route.extend({
         { date: moment('2015-11-16'), type: 'work', text: 'Left job at Groupon as Software Engineer III.' },
         { date: moment('2015-12-16'), type: 'work', text: 'Started job at eSpark Learning as Senior Software Engineer.' },
         { date: moment('2016-08-19'), type: 'work', text: 'Left job at eSpark Learning as Senior Software Engineer.' },
+        { date: moment('2017-06-05'), type: 'work', text: 'Started job at BMW Technology as Developer Team Lead.' },
+        { date: moment('2018-03-31'), type: 'work', text: 'Left job at BMW Technology as Developer Team Lead.' },
+        { date: moment('2018-04-02'), type: 'work', text: 'Started job at Kin Insurance as Senior Software Engineer.' },
+        { date: moment('2018-11-02'), type: 'work', text: 'Left job at Kin Insurance as Senior Software Engineer.' },
+        { date: moment('2018-11-05'), type: 'work', text: 'Started job at Trice Imaging as Senior Software Engineer.' },
 
         { date: moment('1994-11-04'), type: 'world', text: 'Bill Clinton elected president of US.' },
         // https://en.wikipedia.org/wiki/Game_6_of_the_1998_NBA_Finals
