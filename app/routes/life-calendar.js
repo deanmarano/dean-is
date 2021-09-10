@@ -4,7 +4,7 @@ import Life from 'dean-is/models/life';
 
 export default Route.extend({
   model() {
-    return new Life({
+    return Life.create({
       name: 'Dean',
       birthdate: moment('1987-08-13'),
       events: [

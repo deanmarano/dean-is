@@ -11,7 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{sinewave-visualizer}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.element.textContent.trim(), '');
 
   // Template block usage:
   this.render(hbs`
@@ -20,5 +20,5 @@ test('it renders', function(assert) {
     {{/sinewave-visualizer}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.element.textContent.trim(), 'template block text');
 });
