@@ -1,9 +1,9 @@
 <h1>Really, what color are your eyes?</h1>
 To figure it out, let's take a few pictures.
 {{#unless started}}
-  <button {{action 'start'}}>Let's Go!</button>
+  <button type="button" {{action 'start'}}>Let's Go!</button>
 {{else}}
-  <button {{action 'takePicture'}}>Take Picture</button>
+  <button type="button" {{action 'takePicture'}}>Take Picture</button>
 {{/unless}}
 <video width="320" height="240"></video>
 <div class="target-box"></div>
