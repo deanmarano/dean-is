@@ -26,32 +26,31 @@ export default EmberObject.extend({
   daysComplete: computed('birthdate', function() {
     return moment().diff(this.get('birthdate'), 'days');
   }),
-  daysRemaining: computed('birthdate', function() {
+  daysRemaining: computed('birthdate', function () {
     return this.get('deathdate').diff(moment(), 'days');
   }),
-  age: computed('birthdate', function() {
-    return moment().diff(this.get('birthdate'), 'years');
+  age: computed('birthdate', function () {
+    return moment().diff(this.birthdate, 'years');
   }),
-  firstYear: computed('birthdate', function() {
-    return this.get('birthdate').clone().year();
+  firstYear: computed('birthdate', function () {
+    return this.birthdate.clone().year();
   }),
 
   deathdate: computed('birthdate', 'lifeExpectancy', function() {
-    return moment(this.get('birthdate')).add(this.get('lifeExpectancy'), 'years');
+    return this.birthdate.clone().add(this.get('lifeExpectancy'), 'years');
   }),
 
-  years: computed('events', function() {
-    var firstYear = this.get('firstYear');
+  years: computed('events', 'firstYear', 'maxYears', function () {
     var years = [];
-    for(let i = 0; i < this.get('maxYears'); i++) {
-      let year = firstYear + i;
+    for (let i = 0; i < this.maxYears; i++) {
+      let year = this.firstYear + i;
       let label;
-      if(year === firstYear || year % 10 === 0 || year === moment().year()) {
+      if (year === this.firstYear || year % 10 === 0 || year === moment().year()) {
         label = year;
       }
-      years[i] = {year: firstYear + i, months: [], label: label};
-      for(let month = 0; month < 12; month++) {
-        years[i].months.push(this.createMonth(month, year, firstYear, this));
+      years[i] = {year: this.firstYear + i, months: [], label: label};
+      for (let month = 0; month < 12; month++) {
+        years[i].months.push(this.createMonth(month, year, this.firstYear, this));
       }
     }
     return years;
