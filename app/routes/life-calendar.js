@@ -70,6 +70,8 @@ export default Route.extend({
         { date: moment('2015-11-16'), type: 'work', text: 'Left job at Groupon as Software Engineer III.' },
         { date: moment('2015-12-16'), type: 'work', text: 'Started job at eSpark Learning as Senior Software Engineer.' },
         { date: moment('2016-08-19'), type: 'work', text: 'Left job at eSpark Learning as Senior Software Engineer.' },
+        { date: moment('2017-04-10'), type: 'work', text: 'Started job at Citadel LLC as Developer.' },
+        { date: moment('2017-04-13'), type: 'work', text: 'Left job at Citadel LLC as Developer.' },
         { date: moment('2017-06-05'), type: 'work', text: 'Started job at BMW Technology as Developer Team Lead.' },
         { date: moment('2018-03-31'), type: 'work', text: 'Left job at BMW Technology as Developer Team Lead.' },
         { date: moment('2018-04-02'), type: 'work', text: 'Started job at Kin Insurance as Senior Software Engineer.' },
