@@ -9,12 +9,12 @@ At it's core, a computer is a way to store and retrieve information.
 
 When you have information you want to store on a computer, we call that information _data_.
 
-To describe data better, we group different types of data into _data types_.
+To describe data better, we group data by it's different types.
 
 ## Boolean
 * Description:  The basis for computing, and the smallest indivisible piece of information.
 * Values: `true` `false`
-* Also called: bit
+* Also called: bit (8 bits is a byte!)
 
 ## Character
 * Description:  An individual letter
@@ -32,10 +32,9 @@ To describe data better, we group different types of data into _data types_.
 * Also called: Object, Struct, Class
 
 ## Array
-A list of booleans, characters, numbers, hashes, or arrays. Also called:
-* Description:  The basis for computing, and the smallest indivisible piece of information.
+* Description: A list of booleans, characters, numbers, hashes, or arrays.
 * Values: `[]` (empty array), `[1]`, `[1,2,3,4]`, `['h', 'e', 'l', 'l', 'o']`
-* Also called: List, Vector
+* Also called: List, Vector, `arr`
 
 ## Function
 * Description: a list of instructions that tell the computer what to do.
