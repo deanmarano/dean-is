@@ -25,5 +25,3 @@ Router.map(function() {
   this.route('post', {path: ':url'});
   this.route('making-noise');
 });
-
-export default Router;
