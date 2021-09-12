@@ -29,9 +29,9 @@ export default Route.extend({
         { date: moment('2021-09-04'), type: 'family', text: 'Kelsey Patterson and Dean get married.'},
         { date: moment('2020-07-25'), type: 'family', text: 'Odie was born.'},
 
-        { date: moment('2001-06-03'), type: 'education', text: 'Graudated from Benjamin Middle School' },
+        { date: moment('2001-06-03'), type: 'education', text: 'Graduated from Benjamin Middle School' },
         { date: moment('2001-08-20'), type: 'education', text: 'Started St. Francis High School.' },
-        { date: moment('2005-05-20'), type: 'education', text: 'Graudated from St. Francis High School.' },
+        { date: moment('2005-05-20'), type: 'education', text: 'Graduated from St. Francis High School.' },
         { date: moment('2005-08-18'), type: 'education', text: 'Started Hope College bachelors degree in biology and chemistry.' },
         { date: moment('2009-05-24'), type: 'education', text: 'Graduated Hope College bachelors degree in computer science.' },
         { date: moment('2011-09-05'), type: 'education', text: 'Started DePaul University masters degree in computer science with AI emphasis.' },
