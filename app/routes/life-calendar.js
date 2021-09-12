@@ -24,9 +24,9 @@ export default Route.extend({
         { date: moment('2005-12-02'), type: 'family', text: 'Mom and Dad separate.'},
         { date: moment('2014-11-17'), type: 'family', text: 'Dad and Debi get married.'},
         { date: moment('2017-01-16'), type: 'family', text: 'Grandma died'},
-        { date: moment('2019-12-31'), type: 'family', text: 'Asked Kelsey to marry me.'},
+        { date: moment('2019-12-31'), type: 'family', text: 'Dean asked Kelsey Patterson to marry him.'},
         { date: moment('2019-08-10'), type: 'family', text: 'Chewy died.'},
-        { date: moment('2021-09-04'), type: 'family', text: 'Kelsey and I get married.'},
+        { date: moment('2021-09-04'), type: 'family', text: 'Kelsey Patterson and Dean get married.'},
         { date: moment('2020-07-25'), type: 'family', text: 'Odie was born.'},
 
         { date: moment('2001-06-03'), type: 'education', text: 'Graudated from Benjamin Middle School' },
@@ -56,9 +56,9 @@ export default Route.extend({
         { date: moment('2013-10-13'), type: 'life', text: 'Completed 2013 Chicago Marathon.' },
         { date: moment('2015-08-01'), type: 'life', text: 'Moved to 1730 N. Western Ave, Chicago, IL.' },
         { date: moment('2017-08-25'), type: 'life', text: 'Moved to 2140 N. Concord Pl, Chicago, IL.' },
-        { date: moment('2017-09-14'), type: 'life', text: 'First date with Kelsey.' },
+        { date: moment('2017-09-14'), type: 'life', text: 'First date with Kelsey Patterson.' },
         { date: moment('2018-06-01'), type: 'life', text: 'Moved to 1730 W Thomas St, Chicago, IL.' },
-        { date: moment('2020-04-10'), type: 'life', text: 'Bought home at 1211 Sigsbee St SE with Kelsey, Grand Rapids, MI.' },
+        { date: moment('2020-04-10'), type: 'life', text: 'Bought home at 1211 Sigsbee St SE with Kelsey Patterson, Grand Rapids, MI.' },
 
         { date: moment('2008-05-05'), type: 'work', text: 'Started job at Hope Computer Information and Technology department.' },
         { date: moment('2008-05-15'), type: 'work', text: 'Started internship at Allstate as Systems Analyst.' },
